@@ -14,14 +14,17 @@ console.log("Deepar version: " + deepar.version);
 
   // All the effects are in the public/effects folder.
   // Here we define the order of effect files.
-  const effectList = 'effects/hat.deepar';
+  const effectList = [
+    'effects/hat.deepar',
+    'effects/shoes.deepar'
+  ];
 
   // Initialize DeepAR with an effect file.
   const deepAR = await deepar.initialize({
     licenseKey: '04b77737ecf43aa5215387c2f6a5cdb9b8e9600c64eeb909042f43fdf9680ca22fda1812f20e3855',
     canvas: canvas,
     rootPath: "./deepar-resources", // See webpack.config.js and package.json build script.
-    effect: effectList
+    effect: effectList[0]
   });
 
   // Hide the loading screen.
@@ -44,11 +47,13 @@ console.log("Deepar version: " + deepar.version);
       arrows: false,
       accessibility: false,
       variableWidth: true,
+      infinite: false,
+      loop: false,
     });
 
     // Switch the effect when carusel moves.
     $('.effect-carousel').on('afterChange', async function (event, slick, currentSlide) {
-      await deepAR.switchEffect(effectList);
+      await deepAR.switchEffect(effectList[currentSlide]);
     });
 
 
