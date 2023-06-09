@@ -45,7 +45,8 @@ module.exports = {
       },
     ],
     compress: true,
+    disableHostCheck: true,
+    allowedHosts: "all",
     port: 9000,
-    public: 'store-client-nestroia1.c9users.io'
   },
 };
