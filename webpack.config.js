@@ -45,6 +45,6 @@ module.exports = {
       },
     ],
     compress: true,
-    port: 9000,
+    public: 'store-client-nestroia1.c9users.io' // That solved it  
   },
 };
