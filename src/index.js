@@ -16,7 +16,6 @@ console.log("Deepar version: " + deepar.version);
   // Here we define the order of effect files.
   const effectList = [
     'effects/hat.deepar',
-    'effects/shoes.deepar'
   ];
 
   // Initialize DeepAR with an effect file.
@@ -55,8 +54,6 @@ console.log("Deepar version: " + deepar.version);
     $('.effect-carousel').on('afterChange', async function (event, slick, currentSlide) {
       await deepAR.switchEffect(effectList[currentSlide]);
     });
-
-
   });
 
 })();
